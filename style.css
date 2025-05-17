@@ -1,9 +1,26 @@
-body{
-    background-color: rgb(222, 236, 248);
-    align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
-h1{
-    text-align: center;
-    color: rgb(48, 207, 255);
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  text-align: center;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: rgb(48, 207, 255);
 }
