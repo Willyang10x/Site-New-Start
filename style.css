@@ -65,6 +65,11 @@ body {
   color: #00bcd4;
 }
 
+.hamburger i,
+.close-menu i {
+  color: #0485ac;
+}
+
 .btn-contato {
   background-color: #00bcd4;
   color: white !important;
