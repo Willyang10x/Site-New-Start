@@ -22,5 +22,9 @@ body {
 }
 
 h1 {
-  color: rgb(48, 207, 255);
+  color: #0485ac;
+}
+
+.logo{
+    max-width: 15%;
 }
