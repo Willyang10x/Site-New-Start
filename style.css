@@ -5,7 +5,6 @@
   font-family: 'Arial', sans-serif;
 }
 
-
 body {
   background-color: #ffffff;
   overflow-x: hidden;
@@ -46,7 +45,6 @@ body {
   z-index: -1;
 }
 
-
 .header {
   position: fixed;
   top: 20px;
@@ -60,7 +58,6 @@ body {
   padding: 10px 30px;
 }
 
-
 .header-box {
   display: flex;
   justify-content: space-between;
@@ -71,7 +68,6 @@ body {
 .logo-area .logo {
   height: 40px;
 }
-
 
 .nav-menu {
   display: flex;
@@ -95,7 +91,6 @@ body {
   color: #00bcd4;
 }
 
-
 .btn-contato {
   background-color: #00bcd4;
   color: white !important;
@@ -109,14 +104,12 @@ body {
   background-color: #0194a7;
 }
 
-
 .container {
   text-align: center;
   padding-top: 160px;
   position: relative;
   z-index: 1;
 }
-
 
 h1 {
   color: #0485ac;
@@ -148,18 +141,43 @@ h1 {
 }
 
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+  }
+
   .nav-menu {
-    justify-content: center;
-    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+
+  .nav-menu.show {
+    display: flex;
   }
 
   .header-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo-area {
-    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
   }
 }
