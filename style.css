@@ -1,8 +1,40 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: rgb(255, 255, 255);
-  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 #particles-js {
@@ -14,18 +46,120 @@ body {
   z-index: -1;
 }
 
+
+.header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 30px;
+}
+
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-area .logo {
+  height: 40px;
+}
+
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #00bcd4;
+}
+
+
+.btn-contato {
+  background-color: #00bcd4;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-contato:hover {
+  background-color: #0194a7;
+}
+
+
 .container {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 160px;
   position: relative;
   z-index: 1;
 }
 
+
 h1 {
   color: #0485ac;
-
+  font-size: 2rem;
 }
 
-.logo{
-    max-width: 15%;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo, h1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.logo {
+  animation-delay: 0.2s;
+}
+
+h1 {
+  animation-delay: 0.4s;
+}
+
+
+@media (max-width: 768px) {
+  .nav-menu {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .header-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-area {
+    margin-bottom: 10px;
+  }
 }
