@@ -19,6 +19,19 @@ body {
   z-index: -1;
 }
 
+.cursor {
+  display: inline-block;
+  width: 1px;
+  background-color: #fff;
+  animation: blink 0.7s steps(1) infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 .header {
   position: fixed;
   top: 20px;
