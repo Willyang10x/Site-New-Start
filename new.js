@@ -1,30 +1,65 @@
-particlesJS('particles-js', {
-  particles: {
-    number: { value: 60, density: { enable: true, value_area: 800 } },
-    color: { value: "#00bcd4" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5 },
-    size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#00bcd4",
-      opacity: 0.4,
-      width: 1
+const configParticulas = {
+  particulas: {
+    numero: { valor: 60, densidade: { habilitar: true, area_valor: 800 } },
+    cor: { valor: "#00bcd4" },
+    formato: { tipo: "circle" }, 
+    opacidade: { valor: 0.5 },
+    tamanho: { valor: 3, aleatorio: true },
+    linhas_ligadas: {
+      habilitar: true,
+      distancia: 150,
+      cor: "#00bcd4",
+      opacidade: 0.4,
+      largura: 1
     },
-    move: { enable: true, speed: 3 }
+    movimento: { habilitar: true, velocidade: 3 }
   },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: false },
-      resize: true
+  interatividade: {
+    detectar_em: "canvas",
+    eventos: {
+      ao_passar_mouse: { habilitar: true, modo: "repulse" }, 
+      ao_clicar: { habilitar: false },
+      redimensionar: true
     },
-    modes: { repulse: { distance: 100 } }
+    modos: { repulsao: { distancia: 100 } }
   },
-  retina_detect: true
-});
+  detectar_retina: true
+};
+
+
+function converterConfig(configPt) {
+  return {
+    particles: {
+      number: { value: configPt.particulas.numero.valor, density: { enable: configPt.particulas.numero.densidade.habilitar, value_area: configPt.particulas.numero.densidade.area_valor } },
+      color: { value: configPt.particulas.cor.valor },
+      shape: { type: configPt.particulas.formato.tipo },
+      opacity: { value: configPt.particulas.opacidade.valor },
+      size: { value: configPt.particulas.tamanho.valor, random: configPt.particulas.tamanho.aleatorio },
+      line_linked: {
+        enable: configPt.particulas.linhas_ligadas.habilitar,
+        distance: configPt.particulas.linhas_ligadas.distancia,
+        color: configPt.particulas.linhas_ligadas.cor,
+        opacity: configPt.particulas.linhas_ligadas.opacidade,
+        width: configPt.particulas.linhas_ligadas.largura
+      },
+      move: { enable: configPt.particulas.movimento.habilitar, speed: configPt.particulas.movimento.velocidade }
+    },
+    interactivity: {
+      detect_on: configPt.interatividade.detectar_em,
+      events: {
+        onhover: { enable: configPt.interatividade.eventos.ao_passar_mouse.habilitar, mode: configPt.interatividade.eventos.ao_passar_mouse.modo },
+        onclick: { enable: configPt.interatividade.eventos.ao_clicar.habilitar },
+        resize: configPt.interatividade.eventos.redimensionar
+      },
+      modes: { repulse: { distance: configPt.interatividade.modos.repulsao.distancia } }
+    },
+    retina_detect: configPt.detectar_retina
+  };
+}
+
+
+particlesJS('particles-js', converterConfig(configParticulas));
+
 
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('side-menu');
