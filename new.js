@@ -45,3 +45,42 @@ overlay.addEventListener('click', () => {
   sideMenu.classList.remove('show');
   overlay.classList.remove('show');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const element = document.getElementById("typewriter");
+  const texts = [
+    "Sejam Bem-vindos à New Start Sites!",
+    "Criamos sites profissionais para você!"
+  ];
+  const speed = 70;
+  const eraseSpeed = 40;
+  const delayBetween = 1500;
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentText = texts[textIndex];
+
+    if (!isDeleting) {
+      element.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetween);
+        return;
+      }
+    } else {
+      element.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? eraseSpeed : speed);
+  }
+
+  typeEffect();
+});
