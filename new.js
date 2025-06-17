@@ -49,8 +49,8 @@ overlay.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function () {
   const element = document.getElementById("typewriter");
   const texts = [
-    "Sejam Bem-vindos à New Start Sites!",
-    "Criamos sites profissionais para você!"
+    "New Start Agência de Mídia digital!",
+    "Aqui a sua Empresa se destaca!"
   ];
   const speed = 70;
   const eraseSpeed = 40;
