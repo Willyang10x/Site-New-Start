@@ -449,6 +449,7 @@ body {
 }
 
 .links-sociais {
+  justify-content: center;
   display: flex;
   gap: 15px;
 }
