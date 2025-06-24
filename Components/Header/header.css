@@ -1,0 +1,147 @@
+.header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 30px;
+  backdrop-filter: blur(10px);
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-area .logo {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #00bcd4;
+}
+
+.hamburger i,
+.close-menu i {
+  color: #0485ac;
+}
+
+.btn-contato {
+  background-color: #00bcd4;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-contato:hover {
+  background-color: #0194a7;
+}
+
+/* Menu mobile */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+}
+
+.side-menu.show {
+  right: 0;
+}
+
+.menu-overlay.show {
+  display: block;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover {
+  color: #00bcd4;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
