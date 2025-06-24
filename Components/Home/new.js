@@ -161,28 +161,6 @@ particlesJS("particles-js", {
   retina_detect: true,
 })
 
-const hamburger = document.getElementById("hamburger")
-const sideMenu = document.getElementById("side-menu")
-const closeMenu = document.getElementById("close-menu")
-const overlay = document.getElementById("menu-overlay")
-
-hamburger.addEventListener("click", () => {
-  sideMenu.classList.add("show")
-  overlay.classList.add("show")
-})
-
-closeMenu.addEventListener("click", () => {
-  sideMenu.classList.remove("show")
-  overlay.classList.remove("show")
-})
-
-overlay.addEventListener("click", () => {
-  sideMenu.classList.remove("show")
-  overlay.classList.remove("show")
-})
-
-
-
 
 document.querySelectorAll('a[href^="#"]').forEach((ancora) => {
   ancora.addEventListener("click", function (e) {
@@ -196,5 +174,3 @@ document.querySelectorAll('a[href^="#"]').forEach((ancora) => {
     }
   })
 })
-
-
