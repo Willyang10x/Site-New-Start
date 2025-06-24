@@ -83,6 +83,10 @@
   display: none;
 }
 
+.menu-overlay.show {
+  display: block;
+}
+
 .side-menu {
   position: fixed;
   top: 0;
@@ -96,14 +100,11 @@
   display: flex;
   flex-direction: column;
   transition: right 0.3s ease;
+  overflow-y: auto;
 }
 
 .side-menu.show {
   right: 0;
-}
-
-.menu-overlay.show {
-  display: block;
 }
 
 .close-menu {
