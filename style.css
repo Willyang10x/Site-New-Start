@@ -1,5 +1,5 @@
-@import url(/Components/Footer/footer.css);
-@import url(/Components/Header/header.css);
+@import url(footer.css);
+@import url(header.css);
 
 * {
   margin: 0;

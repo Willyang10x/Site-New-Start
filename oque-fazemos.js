@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.querySelector('header')) {
-    fetch('/Components/Header/header.html')
+    fetch('header.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o header: ' + response.status);
@@ -54,7 +54,7 @@ function setupMenuHamburger() {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.querySelector('footer')) {
-    fetch('/Components/Footer/footer.html')
+    fetch('footer.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o footer: ' + response.status);
