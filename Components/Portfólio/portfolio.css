@@ -1,3 +1,6 @@
+@import url(/Components/Footer/footer.css);
+@import url(/Components/Header/header.css);
+
 .portfolio-page {
   padding: 0 20px 100px;
 }
